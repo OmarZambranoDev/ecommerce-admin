@@ -1,0 +1,104 @@
+.bulk-editor {
+    padding: 20px;
+    background: #f5f5f5;
+}
+
+.bulk-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.bulk-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.bulk-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bulk-controls label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+}
+
+.bulk-controls input[type="number"] {
+    width: 120px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.bulk-controls select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.bulk-controls button {
+    padding: 8px 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.bulk-controls button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.products-list {
+    display: grid;
+    gap: 10px;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.product-item input[type="checkbox"] {
+    margin: 0;
+}
+
+.product-item span {
+    flex: 1;
+}
+
+.product-item span:first-of-type {
+    font-weight: bold;
+    flex: 2;
+}
+
+.bulk-actions button {
+    padding: 8px 16px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.bulk-actions button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
