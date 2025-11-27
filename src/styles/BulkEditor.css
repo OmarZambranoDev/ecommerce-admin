@@ -66,6 +66,14 @@
     gap: 10px;
 }
 
+.products-list-header {
+    display: grid;
+    grid-template-columns: 40px 2fr 1fr 1fr 1.05fr;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    align-items: center;
+}
+
 .product-item {
     display: flex;
     align-items: center;

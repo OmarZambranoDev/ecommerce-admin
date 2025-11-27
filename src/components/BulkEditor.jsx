@@ -119,6 +119,14 @@ const BulkEditor = ({ products, onProductsUpdate }) => {
             </div>
 
             <div className="products-list">
+                <div className="products-list-header">
+                    <span></span>
+                    <strong>Name</strong>
+                    <strong>Price</strong>
+                    <strong>Category</strong>
+                    <strong>Inventory</strong>
+                </div>
+
                 {products.map(product => (
                     <div key={product.id} className="product-item">
                         <input

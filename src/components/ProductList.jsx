@@ -3,13 +3,22 @@ import { useProducts } from '../contexts/ProductContext';
 import BulkEditor from './BulkEditor';
 
 const ProductList = () => {
-    const { products } = useProducts();
+    const { products, setProducts } = useProducts();
     const [searchTerm, setSearchTerm] = useState('');
 
     const filteredProducts = products.filter(product =>
         product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         product.category.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+    const handleProductsUpdate = (updatedFilteredProducts) => {
+        const updatedFullProducts = products.map(product => {
+            const updatedProduct = updatedFilteredProducts.find(p => p.id === product.id);
+            return updatedProduct || product;
+        });
+
+        setProducts(updatedFullProducts);
+    };
 
     return (
         <div className="product-list">
@@ -23,7 +32,7 @@ const ProductList = () => {
                 />
             </div>
 
-            <BulkEditor products={filteredProducts} />
+            <BulkEditor products={filteredProducts} onProductsUpdate={handleProductsUpdate}/>
         </div>
     );
 };
