@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useBulkActions } from '../hooks/useBulkActions';
 import { updateProductPrices } from '../utils/productHelpers';
 import '../styles/BulkEditor.css';
+import { getProductTotalInventory } from '../types/products';
 
 const BulkEditor = ({ products, onProductsUpdate }) => {
     const [selectedProducts, setSelectedProducts] = useState([]);
@@ -122,7 +123,7 @@ const BulkEditor = ({ products, onProductsUpdate }) => {
                 <div className="products-list-header">
                     <span></span>
                     <strong>Name</strong>
-                    <strong>Price</strong>
+                    <strong>Base Price</strong>
                     <strong>Category</strong>
                     <strong>Inventory</strong>
                 </div>
@@ -135,9 +136,9 @@ const BulkEditor = ({ products, onProductsUpdate }) => {
                             onChange={() => handleProductSelect(product.id)}
                         />
                         <span>{product.name}</span>
-                        <span>${product.price}</span>
+                        <span>${product.basePrice.toFixed(2)}</span>
                         <span>{product.category}</span>
-                        <span>Stock: {product.inventory}</span>
+                        <span>Stock: {getProductTotalInventory(product)}</span>
                     </div>
                 ))}
             </div>

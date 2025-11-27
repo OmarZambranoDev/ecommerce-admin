@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductsProvider } from './contexts/ProductContext.jsx'
+import { ProductsProvider } from './contexts/ProductContext'
 import ProductList from './components/ProductList.jsx'
 import './styles/App.css';
 
